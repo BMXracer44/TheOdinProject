@@ -1,17 +1,11 @@
 const convertToCelsius = function(temp) {
-  let num = (temp - 32) * (5/9);
-  if(num % 1 == 0){
-    return num;
-  }
-  return num.toFixed(1);
+  let num = Math.round((temp - 32) * (5/9) * 10) / 10;
+  return num;
 };
 
 const convertToFahrenheit = function(temp) {
-  let num = (temp * (9/5)) + 32;
-  if(num % 1 == 0){
-    return num;
-  }
-  return num.toFixed(1);
+  let num = Math.round(((temp * (9/5)) + 32) * 10) / 10;
+  return num;
 };
 
 // Do not edit below this line

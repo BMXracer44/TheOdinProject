@@ -13,8 +13,10 @@ let firstName = "Carlos"
 let lastName = "Stevenson"
 let birthYear = 1947;
 let thisYear = 1965;
+let age = thisYear - birthYear;
+let fullName = firstName + " " + lastName;
 
-greeting = "Hello! My name is " + firstName + " " + lastName + " and I am " + (thisYear - birthYear) + " years old.";
+greeting = "Hello! My name is " + fullName + " and I am " + age + " years old.";
 
 // Do not change this
 module.exports = {
