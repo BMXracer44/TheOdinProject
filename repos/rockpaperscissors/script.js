@@ -1,4 +1,4 @@
-console.log("Hello World!");
+const container = document.querySelector("#interface");
 
 let computerScore = 0;
 let humanScore = 0;
@@ -25,38 +25,70 @@ const getHumanChoice = function(){
 
 const playRound = function(humanChoice, computerChoice){
     if(humanChoice === computerChoice){
-        console.log("You tied! The computer also picked " + humanChoice + "!");
+        const winner = document.createElement("div");
+        winner.classList.add("winner");
+        winner.textContent = "You tied! The computer also picked " + humanChoice + "!";
+
+        container.appendChild(winner);        
     }
     else if(humanChoice === "paper" && computerChoice === "rock"){
-        console.log("You win! Paper beats rock!");
+        const winner = document.createElement("div");
+        winner.classList.add("winner");
+        winner.textContent = "You win! Paper beats rock!";
+
+        container.appendChild(winner);         
         humanScore++;
     }
     else if(humanChoice === "rock" && computerChoice === "scissors"){
-        console.log("You win! Rock beats scissors!");
+        const winner = document.createElement("div");
+        winner.classList.add("winner");
+        winner.textContent = "You win! Rock beats scissors!";
+
+        container.appendChild(winner);        
         humanScore++;
     }
     else if(humanChoice === "scissors" && computerChoice === "paper"){
-        console.log("You win! Scissors beats paper!");
+        const winner = document.createElement("div");
+        winner.classList.add("winner");
+        winner.textContent = "You win! Scissors beats paper!";
+
+        container.appendChild(winner);        
         humanScore++;
     }
     else{
-        console.log("You lose! " + computerChoice + " beats " + humanChoice + "!");
+        const winner = document.createElement("div");
+        winner.classList.add("winner");
+        winner.textContent = "You lose! " + computerChoice + " beats " + humanChoice + "!";
+
+        container.appendChild(winner);
         computerScore++;
     }
 }
 
-while((humanScore + computerScore) < 5){
+/*while((humanScore + computerScore) < 5){
     let humanChoice = getHumanChoice();
     let computerChoice = getComputerChoice();
     playRound(humanChoice, computerChoice);
-}
+}*/
 
 if(humanScore > computerScore){
-    console.log("You win!");
+    const champ = document.createElement("div");
+    champ.classList.add("champ");
+    champ.textContent = "You win!";
+
+    container.appendChild(champ);
 }
 else if(humanScore == computerScore){
-    console.log("You tied!");
+    const champ = document.createElement("div");
+    champ.classList.add("champ");
+    champ.textContent = "You tied!";
+    
+    container.appendChild(champ);
 }
 else{
-    console.log("You lose");
+    const champ = document.createElement("div");
+    champ.classList.add("champ");
+    champ.textContent = "You lose!";
+
+    container.appendChild(champ);
 }
